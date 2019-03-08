@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Title msg="ingo duarte" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Title from "./components/Title.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Title
   }
 };
 </script>
 
 <style>
+/* div {
+  border: 1px solid red;
+} */
+
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  /* width: calc(100vw - 20px); */
+  height: calc(100vh - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
