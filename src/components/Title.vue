@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h4>• making things with code •</h4>
+    <h4>making things with code</h4>
     <p class="floating">▼</p>
   </div>
 </template>
