@@ -24,8 +24,18 @@ export default {
 
 html {
   font-family: "Inter", sans-serif;
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
+}
+
+html,
+html a {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+  margin: 10px;
 }
 
 @supports (font-variation-settings: normal) {
@@ -44,5 +54,6 @@ html {
   justify-content: center;
   vertical-align: middle;
   text-align: center;
+  overflow: hidden;
 }
 </style>

@@ -2,13 +2,24 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h4>making things with code</h4>
-    <p class="floating">▼</p>
+    <p
+      class="floating"
+      @click="isZoomed = !isZoomed"
+      :class="{ big: isZoomed }"
+    >
+      ▼
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Title",
+  data() {
+    return {
+      isZoomed: false
+    };
+  },
   props: {
     msg: String
   }
@@ -34,22 +45,30 @@ h4 {
 .floating {
   transform: translatey(0px);
   animation: float 3s ease-in-out infinite;
-  opacity: 0.9;
+  text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   display: inline-block;
+  transition: 2.5s;
 }
+
+.floating::after {
+  text-shadow: 3px 15px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.floating:hover::after {
+  opacity: 1;
+}
+
+.big {
+  font-size: 6000px;
+}
+
 @keyframes float {
-  0% {
-    text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
-  }
   50% {
     text-shadow: 3px 15px 15px rgba(0, 0, 0, 0.2);
     transform: translatey(-10px);
-  }
-  100% {
-    text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
   }
 }
 </style>
