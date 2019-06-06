@@ -24,16 +24,16 @@ export default {
 
       var beginX = (0);
       var beginY = (-h / 2);
-      var secondX = (-side / 2);
-      var secondY = (h / 2);
+      var middleX = (-side / 2);
+      var middleY = (h / 2);
       var endX = (side / 2);
       var endY = (h / 2);
 
       console.log(beginX, beginY,
-                  secondX, secondY,
+                  middleX, middleY,
                   endX, endY);
 
-      var tri = draw.polygon(`${beginX},${beginY} ${secondX},${secondY} ${endX},${endY}`);
+      var tri = draw.polygon(`${beginX},${beginY} ${middleX},${middleY} ${endX},${endY}`);
 
       tri.move(0, 0);
       tri.fill('#f06');
