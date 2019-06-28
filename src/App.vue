@@ -1,30 +1,46 @@
 <template>
   <div id="app">
-    <Title msg="ingo duarte" />
+    <transition name="dissolve" mode="out-in">
+      <component
+        :is="this.selectedComponent"
+        @pageWasChanged="changeSelectedComponent($event)"
+      ></component>
+    </transition>
   </div>
 </template>
 
 <script>
-import Title from "./components/Title.vue";
+import Welcome from "./components/Welcome.vue";
+import Home from "./components/Home.vue";
 
 export default {
   name: "app",
   components: {
-    Title
-  }
+    Welcome,
+    Home
+  },
+  data() {
+    return {
+      selectedComponent: "Welcome"
+      // receivedEvent: ""
+    };
+  },
+  methods: {
+    changeSelectedComponent() {
+      this.selectedComponent = "Home";
+      // this.receivedEvent = ev;
+      // console.log(this.receivedEvent)
+    }
+  },
+  mounted() {}
 };
 </script>
 
 <style>
-/* div {
-  border: 1px solid red;
-} */
-
 @import url("https://rsms.me/inter/inter.css");
 
 html {
   font-family: "Inter", sans-serif;
-  /* margin: 0; */
   padding: 0;
 }
 
@@ -47,7 +63,6 @@ body {
 #app {
   margin: 0;
   padding: 0;
-  /* width: calc(100vw - 20px); */
   height: calc(100vh - 20px);
   display: flex;
   align-items: center;
@@ -55,5 +70,15 @@ body {
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
+}
+
+.dissolve-enter-active,
+.dissolve-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.dissolve-enter,
+.dissolve-leave-to {
+  opacity: 0;
 }
 </style>
