@@ -9,11 +9,8 @@
         :stroke="2"
         :isAnimated="false"
       /> -->
-      <Stars>
-        <div class="test-in-slot">
-          Use the tetrahedron to navigate
-        </div>
-      </Stars>
+      <StarsSVG>
+      </StarsSVG>
       <!-- <ZdogTetra
         color="white"
         :scale="1"
@@ -30,6 +27,7 @@
 // import ZdogTri from "./ZdogTri";
 // import ZdogTetra from "./ZdogTetra";
 import Stars from "./Stars";
+import StarsSVG from "./StarsSVG";
 
 export default {
   name: "home",
@@ -43,7 +41,8 @@ export default {
   components: {
     // ZdogTri,
     // ZdogTetra,
-    Stars
+    // Stars,
+    StarsSVG
   }
 };
 </script>
