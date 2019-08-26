@@ -226,7 +226,7 @@ export default {
           // title.rotate.y += rectBackground.rotate.y / TAU;
           // console.log(title.rotate.x)
           // title.translate.x = 0
-        })
+        });
       },
       onDragEnd: function() {
         isDragActive = false;

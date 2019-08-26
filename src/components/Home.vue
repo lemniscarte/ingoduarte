@@ -9,8 +9,7 @@
         :stroke="2"
         :isAnimated="false"
       /> -->
-      <StarsSVG>
-      </StarsSVG>
+      <StarsSVG></StarsSVG>
       <!-- <ZdogTetra
         color="white"
         :scale="1"
@@ -26,7 +25,7 @@
 <script>
 // import ZdogTri from "./ZdogTri";
 // import ZdogTetra from "./ZdogTetra";
-import Stars from "./Stars";
+// import Stars from "./Stars";
 import StarsSVG from "./StarsSVG";
 
 export default {
